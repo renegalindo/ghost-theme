@@ -1,0 +1,8 @@
+routes:
+
+collections:
+  /:
+    permalink: /{year}/{month}/{slug}/
+    template: index
+
+taxonomies:
