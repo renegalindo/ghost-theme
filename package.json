@@ -48,6 +48,6 @@
         "defaults"
     ],
     "config": {
-        "posts_per_page": 25
+        "posts_per_page": 1
     }
 }
