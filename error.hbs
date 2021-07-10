@@ -23,23 +23,7 @@ Keep this template as lightweight as you can!
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 </head>
 <body>
-    <div class="site-wrapper">
-
-        <header class="site-header no-image">
-            <div class="site-nav-main outer">
-                <div class="inner">
-                    <nav class="site-nav-center">
-                        {{#if @site.logo}}
-                        <a class="site-nav-logo" href="{{@site.url}}"><img src="{{img_url @site.logo size="xs"}}"
-                                alt="{{@site.title}}" /></a>
-                        {{else}}
-                        <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-                        {{/if}}
-                    </nav>
-                </div>
-            </div>
-        </header>
-
+    <div class="wrap">
         <main class="outer error-content">
             <div class="inner">
 
@@ -66,7 +50,6 @@ Keep this template as lightweight as you can!
                     </ul>
                 </section>
                 {{/if}}
-
             </div>
         </main>
     </div>
