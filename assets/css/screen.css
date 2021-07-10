@@ -517,10 +517,6 @@ Ghost editor. */
 /* 9. Error Template
 /* ---------------------------------------------------------- */
 
-.error-content {
-    padding: 14vw 4vw 6vw;
-}
-
 .error-message {
     padding-bottom: 10vw;
     text-align: center;
