@@ -4,5 +4,9 @@ collections:
   /:
     permalink: /{year}/{month}/{slug}/
     template: index
+    filter: 'tag:-hash-newsletter'
+  /newsletter/:
+    permalink: /newsletter/{slug}/
+    filter: 'tag:hash-newsletter'
 
 taxonomies:
