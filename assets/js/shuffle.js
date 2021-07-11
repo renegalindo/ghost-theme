@@ -14,7 +14,6 @@ const getRandom = (min, max) => Math.floor(Math.random() * max + min);
   const {posts} = await fetch('/ghost/api/v3/content/posts/?limit=all&fields=url&filter=tag:-hash-newsletter&key=' + contentApiKey)
   .then(response => response.json());
 
-  debugger;
   const post = posts[getRandom(0, posts.length)];
 
   shuffler.href = post.url;
