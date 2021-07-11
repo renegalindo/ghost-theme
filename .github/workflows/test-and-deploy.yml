@@ -15,5 +15,5 @@ jobs:
       - name: Deploy Theme
         uses: TryGhost/action-deploy-theme@v1.4.1
         with:
-          api-url: https://renegalindo.com
-          api-key: 60eaffd5cc4906da5dbaf8e8:2608bd5acfc48a93203bd612e9b04957098fc246b03a8ee37ce83f31666627a0
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
