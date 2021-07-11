@@ -596,13 +596,6 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: 650px) {
-    .wrap {
-        margin: 0 auto;
-        padding: 0 3rem;
-    }
-}
-
 time {
     display: block;
     color: gray;
@@ -649,6 +642,25 @@ time {
     position: fixed;
     bottom: 50px;
     right: 1.5rem;
+}
+
+@media (max-width: 650px) {
+    .wrap {
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+
+    .about-link,
+    .bottom-actions {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        right: unset;
+    }
+
+    .bottom-actions {
+        bottom: 25px;
+    }
 }
 
 /* 12. Dark Mode
