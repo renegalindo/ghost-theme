@@ -618,6 +618,8 @@ time {
     border-radius: 2px;
     font-weight: bold;
     cursor: pointer;
+
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .button.primary {
@@ -631,7 +633,7 @@ time {
 }
 
 .button:not(.disabled):hover {
-    background: purple;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .about-link {
