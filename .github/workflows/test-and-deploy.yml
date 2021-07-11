@@ -4,14 +4,14 @@ on:
     branches:
       - master
 jobs:
-  deploy:
+  automate:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - name: Build and Test Theme
         run: |
           yarn install
-          yarn zip
+          yarn build
           yarn test:ci
       - name: Deploy Theme
         uses: TryGhost/action-deploy-theme@v1.4.1
