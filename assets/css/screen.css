@@ -596,6 +596,13 @@ body {
     margin: 0 auto;
 }
 
+@media (max-width: 650px) {
+    .wrap {
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+}
+
 time {
     display: block;
     color: gray;
