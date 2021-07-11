@@ -6,7 +6,6 @@
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
     },
-    "license": "MIT",
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
@@ -24,7 +23,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/vikaspotluri123/rene-blog-theme.git"
     },
     "devDependencies": {
         "@tryghost/release-utils": "0.6.12",
