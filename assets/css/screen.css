@@ -7,14 +7,15 @@
 :root {
 
     /* Colours */
-    --color-green: #a4d037;
-    --color-yellow: #fecd35;
-    --color-red: #f05230;
     --color-darkgrey: #15171A;
     --color-midgrey: #738a94;
-    --color-lightgrey: #c5d2d9;
     --color-wash: #e5eff5;
     --color-darkmode: #151719;
+
+    --grey-100: rgba(248, 248, 248, 1);
+    --grey-900: #2B2B2B;
+    --black-900: #2B2B2B;
+    --date-color: #979797;
 
     /*
     An accent color is also set by Ghost itself in
@@ -586,6 +587,8 @@ body {
     flex-direction: column;
     justify-content: center;
     font-family: sans-serif;
+    background: var(--grey-100);
+    color: var(--grey-900);
 }
 
 .wrap {
@@ -598,7 +601,7 @@ body {
 
 time {
     display: block;
-    color: gray;
+    color: var(--date-color);
     font-size: 0.95em;
     padding-top: 0.75em;
     padding-bottom: 2.5em;
@@ -608,15 +611,24 @@ time {
     border: none;
     background: transparent;
     padding: 12px 24px;
-    border-radius: 2px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
 
     transition: box-shadow 0.3s ease-in-out;
 }
 
+.button.secondary {
+    font-weight: lighter;
+}
+
+.button.secondary:hover {
+    text-decoration: underline;
+}
+
 .button.primary {
-    background: #2B2B2B;
+    background: var(--black-900);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     color: white;
 }
 
@@ -625,14 +637,10 @@ time {
     cursor: not-allowed;
 }
 
-.button:not(.disabled):hover {
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
 .about-link {
     position: fixed;
-    right: 1.5rem;
-    top: 1.5rem;
+    right: 2rem;
+    top: 2.5rem;
     width: 50px;
     height: 50px;
     font-size: 30px;
@@ -640,8 +648,9 @@ time {
 
 .bottom-actions {
     position: fixed;
-    bottom: 50px;
-    right: 1.5rem;
+    bottom: 2.5rem;
+    right: 2rem;
+    letter-spacing: 0.35px;
 }
 
 @media (max-width: 650px) {
