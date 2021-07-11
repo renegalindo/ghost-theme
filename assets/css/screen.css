@@ -30,7 +30,7 @@
     --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
-
+    --font-primary: 'cousine';
 }
 
 
@@ -134,8 +134,7 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p {
-    font-family: var(--font-serif);
-    font-weight: 400;
+    font-family: var(--font-primary);
     font-size: 2.1rem;
     line-height: 1.6em;
 }
@@ -166,7 +165,6 @@ is the very first element in the post content */
     vertical-align: middle;
     padding: 0.15em 0.4em 0.15em;
     border: #e1eaef 1px solid;
-    font-weight: 400 !important;
     font-size: 0.9em;
     line-height: 1em;
     color: #15171A;
@@ -442,27 +440,6 @@ Ghost editor. */
     margin: 6vmin 0 0 0;
 }
 
-/* -----old------ */
-
-.footnotes-sep {
-    margin-bottom: 30px;
-}
-
-.footnotes {
-    font-size: 1.5rem;
-}
-
-.footnotes p {
-    margin: 0;
-}
-
-.footnote-backref {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none !important;
-    box-shadow: none !important;
-}
-
 /* Tables */
 .post-full-content table {
     display: inline-block;
@@ -586,13 +563,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: sans-serif;
+    font-family: 'questrial', sans-serif;
     background: var(--grey-100);
     color: var(--black-900);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: unset;
+}
+
 .wrap {
-    max-width: 570px;
+    max-width: 704px;
     /* These paddings help make the content off-center */
     padding-right: 25ch;
     padding-top: 5ch;
@@ -612,14 +593,9 @@ time {
     background: transparent;
     padding: 12px 24px;
     border-radius: 8px;
-    font-weight: bold;
     cursor: pointer;
 
     transition: box-shadow 0.3s ease-in-out;
-}
-
-.button.secondary {
-    font-weight: lighter;
 }
 
 .button.secondary:hover {
