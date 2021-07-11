@@ -11,7 +11,7 @@ Posts will have the route `/{year}/{month}/{slug}/`, unless it has the `#newslet
 For the shuffler to work, you need to create a [Custom Front-End Integration](https://ghost.org/integrations/custom-integrations/), and add this script to your `Code Injection Head`:
 
 ```html
-<script>window.clientApiKey = 'CLIENT_API_Key';</script>
+<script>window.contentApiKey = 'CONTENT_API_Key';</script>
 ```
 
 Note that the shuffler runs on the client (since Ghost doesn't support random posts on the server side), and will exclude newsletter posts. The shuffler code is located in `assets/js/shuffle.js`
