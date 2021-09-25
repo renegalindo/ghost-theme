@@ -44,5 +44,10 @@
     ],
     "config": {
         "posts_per_page": 1
+    },
+    "dependencies": {
+        "@tryghost/admin-api": "^1.4.3",
+        "@tryghost/html-to-mobiledoc": "^0.7.17",
+        "dayjs": "^1.10.7"
     }
 }

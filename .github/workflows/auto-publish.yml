@@ -1,0 +1,19 @@
+name: Send a weekly digest
+on:
+  schedule:
+    # Looking to schedule every Sunday at 15:00 GMT-5 (or 20:00 GMT)
+    # [minute] [hour] [day] [month] [day of week (SUN = 0)]
+    - cron: '0 20 * * 0'
+jobs:
+  schedule-post:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          yarn install --production
+      - name: Execute script
+          node ./scripts/auto-publish.js
+        env:
+          GHOST_ADMIN_API_URL: ${{ secrets.GHOST_ADMIN_API_URL }}
+          GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
