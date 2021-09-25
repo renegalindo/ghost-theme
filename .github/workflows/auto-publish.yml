@@ -13,6 +13,7 @@ jobs:
         run: |
           yarn install --production
       - name: Execute script
+        run:
           node ./scripts/auto-publish.js
         env:
           GHOST_ADMIN_API_URL: ${{ secrets.GHOST_ADMIN_API_URL }}
