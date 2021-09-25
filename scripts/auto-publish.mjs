@@ -81,7 +81,7 @@ try {
   process.exit(1);
 }
 
-if (published_at) {
+if (false && published_at) {
   const email_recipient_filter = 'status:-free';
   try {
     await api.posts.edit({
