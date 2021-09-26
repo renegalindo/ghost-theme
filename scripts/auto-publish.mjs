@@ -16,7 +16,7 @@ date.locale('es-mx');
 // listed in the `api.posts.browse` `fields` parameter.
 const makePostBlock = post => {
   return `
-    <h3>${post.title}</h3>
+    <h3><a href="${post.url}">${post.title}</a></h3>
     ${post.html}
     <em>${date(post.published_at).format('D [de] MMMM, YYYY')}</em>
     <hr />
@@ -35,7 +35,7 @@ const lastWeek = date().subtract(7, 'days');
 // (excluding #newsletter posts), oldest first
 const posts = await api.posts.browse({
   filter: `published_at:>=${lastWeek.format('YYYY-MM-DD')}+tag:-hash-newsletter`,
-  fields: 'title,published_at,html',
+  fields: 'title,published_at,html,url',
   formats: 'html',
   order: 'published_at asc',
 });
