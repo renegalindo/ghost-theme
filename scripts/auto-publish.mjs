@@ -11,6 +11,19 @@ date.extend(weekOfYear);
 // Set the default locale to Spanish (Mexico)
 date.locale('es-mx');
 
+async function getShuffledPost() {
+  const posts = await api.posts.browse({
+    limit: 'all',
+    fields: 'url',
+    filter: 'tag:-hash-newsletter',
+  });
+
+  const randomIndex = Math.floor(0 * posts.length);
+  const post = posts[randomIndex];
+
+  return `<a href="${post.url}">Shuffle →</a>`;
+}
+
 // Converts a post object (from Ghost API) to the markup used in the weekly
 // newsletter template. Note that all the fields accessed here are explicitly
 // listed in the `api.posts.browse` `fields` parameter.
@@ -48,6 +61,9 @@ const html = `
   </p>
   <p>
     <a href="mailto:?subject=Encontrando+el+formato+de+René+Galindo&amp;body=https://renegalindo.com/">Recomendar a alguien →</a>
+  </p>
+  <p>
+  ${await getShuffledPost()}
   </p>
 `;
 
