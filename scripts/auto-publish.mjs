@@ -4,6 +4,8 @@ import weekOfYear from 'dayjs/plugin/weekOfYear.js';
 import AdminApi from '@tryghost/admin-api';
 import {toMobiledoc} from '@tryghost/html-to-mobiledoc';
 
+const POST_THRESHOLD = 6;
+
 // Add support for computing the current week of the year
 date.extend(weekOfYear);
 // Set the default locale to Spanish (Mexico)
@@ -51,7 +53,7 @@ const html = `
 
 let published_at = undefined;
 
-if (posts.length < 7) {
+if (posts.length < POST_THRESHOLD) {
   console.warn('There are only %d posts', posts.length);
 } else {
   console.log('Rolling up %d posts', posts.length);
