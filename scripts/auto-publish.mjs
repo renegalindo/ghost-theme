@@ -60,7 +60,7 @@ const html = `
     <a href="mailto:mail@renegalindo.com?subject=Encontrando+el+formato">Responder →</a>
   </p>
   <p>
-    <a href="mailto:?subject=Encontrando+el+formato+de+René+Galindo&amp;body=https://renegalindo.com/">Recomendar a alguien →</a>
+    <a href="mailto:?subject=Encontrando+el+formato+de+René+Galindo&amp;body=https://renegalindo.com/">Recomendar →</a>
   </p>
   <p>
   ${await getShuffledPost()}
