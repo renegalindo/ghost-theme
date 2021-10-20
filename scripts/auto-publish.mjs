@@ -4,7 +4,7 @@ import weekOfYear from 'dayjs/plugin/weekOfYear.js';
 import AdminApi from '@tryghost/admin-api';
 import {toMobiledoc} from '@tryghost/html-to-mobiledoc';
 
-const POST_THRESHOLD = 6;
+const POST_THRESHOLD = 5;
 
 // Add support for computing the current week of the year
 date.extend(weekOfYear);
@@ -99,7 +99,7 @@ try {
   process.exit(1);
 }
 
-if (false && published_at) {
+if (published_at) {
   const email_recipient_filter = 'status:-free';
   try {
     await api.posts.edit({
