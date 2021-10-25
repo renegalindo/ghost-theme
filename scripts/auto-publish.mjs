@@ -73,7 +73,8 @@ if (posts.length < POST_THRESHOLD) {
   console.warn('There are only %d posts', posts.length);
 } else {
   console.log('Rolling up %d posts', posts.length);
-
+  
+// Newsletter schedule is configured here
   published_at = date()
     .set('minute', 59)
     .set('hour', 23)
