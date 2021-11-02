@@ -101,7 +101,7 @@ try {
 }
 
 if (published_at) {
-  const email_recipient_filter = 'status:-free';
+  const email_recipient_filter = 'status:free';
   try {
     await api.posts.edit({
       id: post.id,
