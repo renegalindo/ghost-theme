@@ -20,8 +20,8 @@ jobs:
           -H "Authorization: Bearer $GHOST_JWT" \
           -H "CF-Access-Client-Id: $CF_CID" \
           -H "CF-Access-Client-Secret: $CF_SEC"\
-          $GHOST_ADMIN_API_URL/api/admin/themes/upload/\
-          -F file=@./dist/rene.zip
+          -F file=@./dist/rene.zip\
+          ${GHOST_ADMIN_API_URL}/ghost/api/admin/themes/upload/
         env:
           GHOST_ADMIN_API_URL: ${{ secrets.GHOST_ADMIN_API_URL }}
           GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
