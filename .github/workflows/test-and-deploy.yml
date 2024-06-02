@@ -2,7 +2,7 @@ name: Test and Deploy Theme
 on:
   push:
     branches:
-      - master
+      - staging
 jobs:
   automate:
     runs-on: ubuntu-18.04
