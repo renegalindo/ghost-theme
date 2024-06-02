@@ -15,7 +15,7 @@ jobs:
           yarn test:ci
       - name: Deploy Theme
         run: |
-          GHOST_JWT=$(node ./scripts/admin-jwt.js)
+          GHOST_JWT=$(node ./scripts/admin-jwt.mjs)
           curl -X POST \
           -H "Authorization: Bearer $GHOST_JWT" \
           -H "CF-Access-Client-Id: $CF_CID" \
