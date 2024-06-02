@@ -15,7 +15,7 @@ jobs:
       - name: Authenticate
         uses: Boostport/setup-cloudflare-warp@v1
         with:
-          organization: your-organization
+          organization: ${{ secrets.RG_STAGING_ORGANIZATION }}
           auth_client_id: ${{ secrets.RG_STAGING_CLIENT_ID }}
           auth_client_secret: ${{ secrets.RG_STAGING_CLIENT_SECRET }}
       - name: Deploy Theme
