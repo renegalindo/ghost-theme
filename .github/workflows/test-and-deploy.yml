@@ -11,15 +11,19 @@ jobs:
       - name: Build and Test Theme
         run: |
           yarn install
+          yarn gulp zip
           yarn test:ci
-      - name: Authenticate
-        uses: Boostport/setup-cloudflare-warp@v1
-        with:
-          organization: ${{ secrets.RG_STAGING_ORGANIZATION }}
-          auth_client_id: ${{ secrets.RG_STAGING_CLIENT_ID }}
-          auth_client_secret: ${{ secrets.RG_STAGING_CLIENT_SECRET }}
       - name: Deploy Theme
-        uses: TryGhost/action-deploy-theme@v1.6.6
-        with:
-          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+        run: |
+          GHOST_JWT=$(node ./scripts/admin-jwt.js)
+          curl -X POST \
+          -H "Authorization: Bearer $GHOST_JWT" \
+          -H "CF-Access-Client-Id: $CF_CID" \
+          -H "CF-Access-Client-Secret: $CF_SEC"\
+          $GHOST_ADMIN_API_URL/api/admin/themes/upload/\
+          -F file=@./dist/rene.zip
+        env:
+          GHOST_ADMIN_API_URL: ${{ secrets.GHOST_ADMIN_API_URL }}
+          GHOST_ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          CF_CID: ${{ secrets.RG_STAGING_CLIENT_ID }}
+          CF_SEC: ${{ secrets.RG_STAGING_CLIENT_SECRET }}
