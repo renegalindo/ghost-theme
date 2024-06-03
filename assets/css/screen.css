@@ -649,12 +649,12 @@ time {
 }
 
 .about-corner svg {
-    transform: rotate(180deg);
+    transform: rotate(0);
     transition: transform 300ms ease-in-out;
 }
 
 .about-corner:hover svg {
-    transform: rotate(0);
+    transform: rotate(-180deg);
 }
 
 .about-corner:hover .rg-navigation {
