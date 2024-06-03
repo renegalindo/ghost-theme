@@ -632,8 +632,10 @@ time {
 }
 
 .rg-navigation {
-    display: none;
+    visibility: hidden;
     padding: 1rem;
+    transition: opacity 750ms ease-in-out, visibility 750ms ease-in-out;
+    opacity: 0;
 }
 
 .rg-navigation li {
@@ -646,16 +648,16 @@ time {
 
 .about-corner svg {
     transform: rotate(180deg);
+    transition: transform 300ms ease-in-out;
 }
 
 .about-corner:hover svg {
-    animation: flip 300ms ease-in-out;
-    animation-fill-mode: forwards;
+    transform: rotate(0);
 }
 
 .about-corner:hover .rg-navigation {
-    display: block;
-    animation: fade-in 750ms ease-in-out;
+    visibility: visible;
+    opacity: 1;
 }
 
 .rg-navigation a:hover {
@@ -749,20 +751,4 @@ html.dark-mode .kg-bookmark-description {
 
 html.dark-mode .kg-bookmark-metadata {
     color: rgba(255, 255, 255, 0.75);
-}
-
-@keyframes flip {
-    to {
-        transform: rotate(0);
-    }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
