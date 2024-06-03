@@ -17,9 +17,14 @@
     <main class="wrap">
         {{{body}}}
     </main>
-    <a class="about-link" href="/about">
-        {{> "icons/avatar"}}
-    </a>
+    <div class="about-corner">
+        <a class="about-link" href="/about">
+            {{> "icons/avatar"}}
+        </a>
+        <div class="rg-navigation">
+            {{navigation}}
+        </div>
+    </div>
     <div class="bottom-actions">
         <a class="button secondary" href="/subscribe" data-portal>Newsletter</a>
         <a class="button primary disabled" id="shuffler">Shuffle</a>

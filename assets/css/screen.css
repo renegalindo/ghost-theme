@@ -618,13 +618,44 @@ time {
     cursor: not-allowed;
 }
 
-.about-link {
+.about-corner {
     position: fixed;
     right: 2rem;
     top: 2.5rem;
+    text-align: right;
+}
+
+.about-link {
     width: 50px;
     height: 50px;
     font-size: 30px;
+}
+
+.rg-navigation {
+    display: none;
+    padding: 1rem;
+}
+
+.rg-navigation li {
+    list-style: none;
+}
+
+.rg-navigation .nav-current a {
+    font-weight: bold;
+}
+
+.about-corner:hover svg {
+    animation: flip 300ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.about-corner:hover .rg-navigation {
+    display: block;
+    animation: fade-in 750ms ease-in-out;
+}
+
+.rg-navigation a:hover {
+    text-decoration: underline;
 }
 
 .bottom-actions {
@@ -714,4 +745,20 @@ html.dark-mode .kg-bookmark-description {
 
 html.dark-mode .kg-bookmark-metadata {
     color: rgba(255, 255, 255, 0.75);
+}
+
+@keyframes flip {
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
