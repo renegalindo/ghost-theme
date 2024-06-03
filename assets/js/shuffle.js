@@ -11,7 +11,9 @@ const getRandom = (min, max) => Math.floor(Math.random() * max + min);
     return;
   }
 
-  const {posts} = await fetch('/ghost/api/content/posts/?limit=all&fields=url&filter=tag:-hash-newsletter&key=' + contentApiKey)
+  const tag = shuffler.dataset.tag;
+  const filter = tag ? `tag:${tag}` : 'tag:-hash-newsletter';
+  const {posts} = await fetch(`/ghost/api/content/posts/?limit=all&fields=url&filter=${filter}&key=${contentApiKey}`)
   .then(response => response.json());
 
   const post = posts[getRandom(0, posts.length)];
