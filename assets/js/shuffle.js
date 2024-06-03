@@ -11,13 +11,14 @@ const getRandom = (min, max) => Math.floor(Math.random() * max + min);
     return;
   }
 
-  const tag = shuffler.dataset.tag;
+  const tag = new URLSearchParams(location.search).get('tag') || shuffler.dataset.tag;
   const filter = tag || '-hash-newsletter';
+  const href = tag ? '?tag=' + tag : '';
   const {posts} = await fetch('/ghost/api/content/posts/?limit=all&fields=url&filter=tag:' + filter + '&key=' + window.contentApiKey)
   .then(response => response.json());
 
   const post = posts[getRandom(0, posts.length)];
 
-  shuffler.href = post.url;
+  shuffler.href = post.url + href;
   shuffler.classList.remove('disabled');
 })()
