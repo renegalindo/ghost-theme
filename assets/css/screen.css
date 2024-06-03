@@ -644,6 +644,10 @@ time {
     font-weight: bold;
 }
 
+.about-corner svg {
+    transform: rotate(180deg);
+}
+
 .about-corner:hover svg {
     animation: flip 300ms ease-in-out;
     animation-fill-mode: forwards;
@@ -749,7 +753,7 @@ html.dark-mode .kg-bookmark-metadata {
 
 @keyframes flip {
     to {
-        transform: rotate(180deg);
+        transform: rotate(0);
     }
 }
 
