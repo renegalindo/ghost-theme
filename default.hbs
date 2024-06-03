@@ -27,7 +27,11 @@
     </div>
     <div class="bottom-actions">
         <a class="button secondary" href="/subscribe" data-portal>Newsletter</a>
-        <a class="button primary disabled" id="shuffler" {{#if tag}}data-tag="{{tag.slug}}"{{/if}}>Shuffle</a>
+        <a
+            class="button primary disabled" id="shuffler"
+            {{#if post}}data-post="{{post.id}}"{{else if posts}}data-post="{{posts.0.id}}"{{/if}}
+            {{#if tag}}data-tag="{{tag.slug}}"{{/if}}
+        >Shuffle</a>
     </div>
     {{ghost_foot}}
 </body>
