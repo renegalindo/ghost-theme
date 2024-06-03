@@ -634,8 +634,10 @@ time {
 .rg-navigation {
     visibility: hidden;
     padding: 1rem;
-    transition: opacity 750ms ease-in-out, visibility 750ms ease-in-out;
+    transition: opacity 500ms ease-in, visibility 300ms ease-out;
     opacity: 0;
+    position: absolute;
+    right: 0;
 }
 
 .rg-navigation li {
@@ -658,6 +660,7 @@ time {
 .about-corner:hover .rg-navigation {
     visibility: visible;
     opacity: 1;
+    position: relative;
 }
 
 .rg-navigation a:hover {
