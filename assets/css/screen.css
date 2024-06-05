@@ -708,12 +708,23 @@ time {
         padding: 0 3rem;
     }
 
-    .about-link,
+    .about-corner,
     .bottom-actions {
         width: 100%;
         display: flex;
         justify-content: center;
         right: unset;
+    }
+
+    .about-corner {
+        flex-direction: column;
+    }
+
+    .about-link,
+    .rg-navigation,
+    .rg-sr-nav ul {
+        margin: 0 auto;
+        width: fit-content;
     }
 
     .bottom-actions {
