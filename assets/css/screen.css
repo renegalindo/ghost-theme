@@ -588,6 +588,30 @@ time {
     padding-bottom: 2.5em;
 }
 
+.sr-only-unless-focused {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only-unless-focused:focus-visible,
+.sr-only-unless-focused:focus-within {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
 .button {
     border: none;
     background: transparent;
@@ -640,11 +664,11 @@ time {
     right: 0;
 }
 
-.rg-navigation li {
+.rg-nav-base li {
     list-style: none;
 }
 
-.rg-navigation .nav-current a {
+.rg-nav-base .nav-current a {
     font-weight: bold;
 }
 
@@ -655,6 +679,10 @@ time {
 
 .about-corner:hover svg {
     transform: rotate(-180deg);
+}
+
+.about-corner:hover .rg-sr-nav {
+    display: none; /* Hide the SR navigation on hover to prevent both from being visible */
 }
 
 .about-corner:hover .rg-navigation {

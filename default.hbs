@@ -21,9 +21,13 @@
         <a class="about-link" href="/about">
             {{> "icons/avatar"}}
         </a>
-        <div class="rg-navigation">
+        <div class="rg-nav-base rg-navigation">
             {{navigation}}
         </div>
+        {{!-- The previous navigation is only visible/active on hover. This navigation is always tabbable --}}
+        <nav class="sr-only-unless-focused rg-nav-base rg-sr-nav">
+            {{navigation}}
+        </nav>
     </div>
     <div class="bottom-actions">
         <a class="button secondary" href="/subscribe" data-portal>Newsletter</a>
