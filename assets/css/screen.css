@@ -718,6 +718,10 @@ time {
         flex-direction: column;
     }
 
+    .rg-navigation {
+        position: static;
+    }
+
     .menu-icon,
     .rg-navigation,
     .rg-sr-nav ul {
