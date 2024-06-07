@@ -17,15 +17,14 @@
     <main class="wrap">
         {{{body}}}
     </main>
-    <div class="about-corner">
-        <a class="about-link" href="/about">
-            {{> "icons/avatar"}}
-        </a>
-        <div class="rg-nav-base rg-navigation">
-            {{navigation}}
-        </div>
-        {{!-- The previous navigation is only visible/active on hover. This navigation is always tabbable --}}
-        <nav class="sr-only-unless-focused rg-nav-base rg-sr-nav">
+    <div class="menu">
+        <input type="checkbox" class="menu-cb sr-only" name="menu-cb" id="menu-cb" />
+        <label class="menu-icon" for="menu-cb">
+            <span aria-label="Toggle menu">
+                {{> "icons/avatar"}}
+            </span>
+        </label>
+        <nav class="rg-navigation">
             {{navigation}}
         </nav>
     </div>

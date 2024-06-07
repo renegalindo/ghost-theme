@@ -588,7 +588,7 @@ time {
     padding-bottom: 2.5em;
 }
 
-.sr-only-unless-focused {
+.sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -598,18 +598,6 @@ time {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
-}
-
-.sr-only-unless-focused:focus-visible,
-.sr-only-unless-focused:focus-within {
-    position: static;
-    width: auto;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
 }
 
 .button {
@@ -642,14 +630,15 @@ time {
     cursor: not-allowed;
 }
 
-.about-corner {
+.menu {
     position: fixed;
     right: 2rem;
     top: 2.5rem;
     text-align: right;
 }
 
-.about-link {
+.menu-icon {
+    cursor: pointer;
     width: 50px;
     height: 50px;
     font-size: 30px;
@@ -664,31 +653,40 @@ time {
     right: 0;
 }
 
-.rg-nav-base li {
+.rg-navigation li {
     list-style: none;
 }
 
-.rg-nav-base .nav-current a {
+.rg-navigation .nav-current a {
     font-weight: bold;
 }
 
-.about-corner svg {
+.menu svg {
     transform: rotate(0);
     transition: transform 300ms ease-in-out;
 }
 
-.about-corner:hover svg {
+.menu-cb:checked + .menu-icon svg {
     transform: rotate(-180deg);
 }
 
-.about-corner:hover .rg-sr-nav {
-    display: none; /* Hide the SR navigation on hover to prevent both from being visible */
-}
-
-.about-corner:hover .rg-navigation {
+.menu-cb:checked ~ .rg-navigation {
     visibility: visible;
     opacity: 1;
     position: relative;
+}
+
+/** Only enable the hover effect on non-touch devices */
+@media (pointer: fine) {
+    .menu:hover .menu-icon svg {
+        transform: rotate(-180deg);
+    }
+
+    .menu:hover .rg-navigation {
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+    }
 }
 
 .rg-navigation a:hover {
@@ -708,7 +706,7 @@ time {
         padding: 0 3rem;
     }
 
-    .about-corner,
+    .menu,
     .bottom-actions {
         width: 100%;
         display: flex;
@@ -716,11 +714,11 @@ time {
         right: unset;
     }
 
-    .about-corner {
+    .menu {
         flex-direction: column;
     }
 
-    .about-link,
+    .menu-icon,
     .rg-navigation,
     .rg-sr-nav ul {
         margin: 0 auto;
