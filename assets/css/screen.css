@@ -720,14 +720,15 @@ time {
 
     .rg-navigation {
         position: static;
+        width: 100dvw;
+        height: 100vh;
+        background-color: var(--grey-100);
     }
 
     .menu-icon,
-    .rg-navigation,
-    .rg-sr-nav ul {
+    ul.nav {
         margin: 0 auto;
         width: fit-content;
-        background-color: var(--grey-100);
     }
 
     .bottom-actions {
