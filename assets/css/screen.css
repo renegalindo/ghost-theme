@@ -632,9 +632,10 @@ time {
 
 .menu {
     position: fixed;
-    right: 2rem;
-    top: 2.5rem;
+    right: 0;
+    top: 0.5rem;
     text-align: right;
+    padding: 2rem;
 }
 
 .menu-icon {
