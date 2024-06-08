@@ -650,8 +650,7 @@ time {
     padding: 1rem;
     transition: opacity 500ms ease-in, visibility 300ms ease-out;
     opacity: 0;
-    position: absolute;
-    right: 0;
+    pointer-events: none;
 }
 
 .rg-navigation li {
@@ -674,7 +673,7 @@ time {
 .menu-cb:checked ~ .rg-navigation {
     visibility: visible;
     opacity: 1;
-    position: relative;
+    pointer-events: all;
 }
 
 /** Only enable the hover effect on non-touch devices */
@@ -686,7 +685,7 @@ time {
     .menu:hover .rg-navigation {
         visibility: visible;
         opacity: 1;
-        position: relative;
+        pointer-events: all;
     }
 }
 
