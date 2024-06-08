@@ -666,6 +666,10 @@ time {
     transition: transform 300ms ease-in-out;
 }
 
+.menu-cb:focus-visible + .menu-icon svg {
+    outline: 1px auto;
+}
+
 .menu-cb:checked + .menu-icon svg {
     transform: rotate(-180deg);
 }
