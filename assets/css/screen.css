@@ -573,7 +573,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrap {
-    max-width: 756px;
+    --width: 756px;
+    width: var(--width);
     /* These paddings help make the content off-center */
     padding-right: 25ch;
     padding-top: 5ch;
@@ -708,6 +709,8 @@ time {
     .wrap {
         margin: 0 auto;
         padding: 0 3rem;
+        max-width: var(--width);
+        width: initial;
     }
 
     .menu,
