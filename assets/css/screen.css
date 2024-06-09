@@ -573,7 +573,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrap {
-    max-width: 704px;
+    max-width: 756px;
     /* These paddings help make the content off-center */
     padding-right: 25ch;
     padding-top: 5ch;
