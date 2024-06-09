@@ -728,7 +728,9 @@ a.button,
 
     .menu {
         flex-direction: column;
-        text-align: left;
+        text-align: center;
+        /* remove X padding because the menu is full-width */
+        padding-inline: 0;
     }
 
     .menu:has(input:checked) ~ .bottom-actions {
