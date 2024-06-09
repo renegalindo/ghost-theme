@@ -135,7 +135,7 @@ is the very first element in the post content */
 .gh-content > dl,
 .gh-content > p {
     font-family: var(--font-primary);
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     line-height: 1.6em;
 }
 
@@ -573,7 +573,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrap {
-    max-width: 704px;
+    --width: 756px;
+    width: var(--width);
     /* These paddings help make the content off-center */
     padding-right: 25ch;
     padding-top: 5ch;
@@ -588,11 +589,28 @@ time {
     padding-bottom: 2.5em;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+a.button,
+.menu a {
+    font-size: 18px;
+}
+
 .button {
     border: none;
     background: transparent;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: 100px;
     cursor: pointer;
 
     transition: box-shadow 0.3s ease-in-out;
@@ -603,7 +621,7 @@ time {
 }
 
 .button.primary {
-    background: var(--black-900);
+    background: black;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     color: white;
     transition: background 0.15s ease-in-out;
@@ -618,13 +636,71 @@ time {
     cursor: not-allowed;
 }
 
-.about-link {
+.menu {
     position: fixed;
-    right: 2rem;
-    top: 2.5rem;
+    right: 0;
+    top: 0.5rem;
+    text-align: right;
+    padding: 2rem;
+}
+
+.menu-icon {
+    cursor: pointer;
     width: 50px;
     height: 50px;
     font-size: 30px;
+}
+
+.rg-navigation {
+    visibility: hidden;
+    padding: 1rem;
+    transition: opacity 500ms ease-in, visibility 300ms ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rg-navigation li {
+    list-style: none;
+}
+
+.rg-navigation .nav-current a {
+    font-weight: bold;
+}
+
+.menu svg {
+    transform: rotate(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.menu-cb:focus-visible + .menu-icon svg {
+    outline: 1px auto;
+}
+
+.menu-cb:checked + .menu-icon svg {
+    transform: rotate(-180deg);
+}
+
+.menu-cb:checked ~ .rg-navigation {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/** Only enable the hover effect on non-touch devices */
+@media (pointer: fine) {
+    .menu:hover .menu-icon svg {
+        transform: rotate(-180deg);
+    }
+
+    .menu:hover .rg-navigation {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.rg-navigation a:hover {
+    text-decoration: underline;
 }
 
 .bottom-actions {
@@ -638,14 +714,40 @@ time {
     .wrap {
         margin: 0 auto;
         padding: 0 3rem;
+        max-width: var(--width);
+        width: initial;
     }
 
-    .about-link,
+    .menu,
     .bottom-actions {
         width: 100%;
         display: flex;
         justify-content: center;
         right: unset;
+    }
+
+    .menu {
+        flex-direction: column;
+        text-align: center;
+        /* remove X padding because the menu is full-width */
+        padding-inline: 0;
+    }
+
+    .menu:has(input:checked) ~ .bottom-actions {
+        display: none;
+    }
+
+    .rg-navigation {
+        position: static;
+        width: 100dvw;
+        height: 100vh;
+        background-color: var(--grey-100);
+    }
+
+    .menu-icon,
+    ul.nav {
+        margin: 0 auto;
+        width: fit-content;
     }
 
     .bottom-actions {

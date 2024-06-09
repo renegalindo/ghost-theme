@@ -11,11 +11,17 @@ const getRandom = (min, max) => Math.floor(Math.random() * max + min);
     return;
   }
 
-  const {posts} = await fetch('/ghost/api/v3/content/posts/?limit=all&fields=url&filter=tag:-hash-newsletter&key=' + contentApiKey)
+  const tag = new URLSearchParams(location.search).get('tag') || shuffler.dataset.tag;
+  const href = tag ? '?tag=' + tag : '';
+  const currentPost = shuffler.dataset.post;
+  let filter = 'tag:' + (tag || '-hash-newsletter');
+  filter = currentPost ? ('id:-' + currentPost + '+' + filter) : '';
+  filter = encodeURIComponent(filter)
+  const {posts} = await fetch('/ghost/api/content/posts/?limit=all&fields=url&filter=' + filter + '&key=' + window.contentApiKey)
   .then(response => response.json());
 
   const post = posts[getRandom(0, posts.length)];
 
-  shuffler.href = post.url;
+  shuffler.href = post.url + href;
   shuffler.classList.remove('disabled');
 })()

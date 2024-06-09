@@ -17,12 +17,24 @@
     <main class="wrap">
         {{{body}}}
     </main>
-    <a class="about-link" href="/about">
-        {{> "icons/avatar"}}
-    </a>
+    <div class="menu">
+        <input type="checkbox" class="menu-cb sr-only" name="menu-cb" id="menu-cb" />
+        <label class="menu-icon" for="menu-cb">
+            <span aria-label="Toggle menu">
+                {{> "icons/avatar"}}
+            </span>
+        </label>
+        <nav class="rg-navigation">
+            {{navigation}}
+        </nav>
+    </div>
     <div class="bottom-actions">
-        <a class="button secondary" href="/subscribe" data-portal>Suscríbete</a>
-        <a class="button primary disabled" id="shuffler">Shuffle</a>
+        <a class="button secondary" href="/subscribe" data-portal>Newsletter</a>
+        <a
+            class="button primary disabled" id="shuffler"
+            {{#if post}}data-post="{{post.id}}"{{else if posts}}data-post="{{posts.0.id}}"{{/if}}
+            {{#if tag}}data-tag="{{tag.slug}}"{{/if}}
+        >Shuffle</a>
     </div>
     {{ghost_foot}}
 </body>

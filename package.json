@@ -3,8 +3,7 @@
     "description": "A minimal theme designed for Rene",
     "version": "4.1.0",
     "engines": {
-        "ghost": ">=4.0.0",
-        "ghost-api": "v4"
+        "ghost": ">=4.0.0"
     },
     "scripts": {
         "dev": "gulp",
@@ -27,7 +26,7 @@
         "autoprefixer": "10.2.5",
         "beeper": "2.1.0",
         "cssnano": "4.1.10",
-        "gscan": "4.0.0",
+        "gscan": "4.43.1",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
@@ -46,7 +45,7 @@
         "posts_per_page": 1
     },
     "dependencies": {
-        "@tryghost/admin-api": "^1.4.3",
+        "@tryghost/admin-api": "^1.13.12",
         "@tryghost/html-to-mobiledoc": "^0.7.17",
         "dayjs": "^1.10.7"
     }
