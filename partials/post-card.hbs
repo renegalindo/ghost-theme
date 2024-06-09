@@ -1,7 +1,12 @@
 <article class="gh-content">
-    {{#if @page.show_title_and_feature_image}}
+    {{#if is_post}}
+        {{#if @page.show_title_and_feature_image}}
+            <h1>{{title}}</h1>
+            {{!-- This theme is not designed to work with a feature image.--}}
+        {{/if}}
+    {{!-- Always show the title in a non-post context (e.g. loops) --}}
+    {{else}}
         <h1>{{title}}</h1>
-        {{!-- This theme is not designed to work with a feature image.--}}
     {{/if}}
     {{content}}
     <time datetime="">{{date format="D [de] MMMM, YYYY"}}</time>
