@@ -723,6 +723,7 @@ time {
 
     .menu {
         flex-direction: column;
+        text-align: left;
     }
 
     .rg-navigation {
