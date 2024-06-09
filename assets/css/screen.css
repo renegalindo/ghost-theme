@@ -601,6 +601,11 @@ time {
     border-width: 0;
 }
 
+a.button,
+.menu a {
+    font-size: 18px;
+}
+
 .button {
     border: none;
     background: transparent;
