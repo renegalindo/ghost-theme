@@ -726,6 +726,10 @@ time {
         text-align: left;
     }
 
+    .menu:has(input:checked) ~ .bottom-actions {
+        display: none;
+    }
+
     .rg-navigation {
         position: static;
         width: 100dvw;
