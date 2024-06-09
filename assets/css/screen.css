@@ -605,7 +605,7 @@ time {
     border: none;
     background: transparent;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: 100px;
     cursor: pointer;
 
     transition: box-shadow 0.3s ease-in-out;
