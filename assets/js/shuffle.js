@@ -28,7 +28,7 @@ const getRandom = (min, max) => Math.floor(Math.random() * max + min);
   if (tag) {
     const querySelector = '.menu a[href="' + window.location.origin + '/tag/' + tag + '/"]';
     document.querySelectorAll(querySelector).forEach(
-      element => element.parentElement.classList.toggle('active', true)
+      element => element.parentElement.classList.toggle('nav-current', true)
     );
   }
 })()
