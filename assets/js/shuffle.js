@@ -24,4 +24,11 @@ const getRandom = (min, max) => Math.floor(Math.random() * max + min);
 
   shuffler.href = post.url + href;
   shuffler.classList.remove('disabled');
+
+  if (tag) {
+    const tagUrl = `${window.location.origin}/tag/${tag}/`;
+    for (const element of document.querySelectorAll(`.menu a[href="${tagUrl}"]`)) {
+      element.classList.toggle('active', true);
+    }
+  }
 })()
