@@ -11,7 +11,7 @@ jobs:
           yarn install --production
       - name: Execute script
         run: |
-          node ./scripts/retag.js
+          node ./scripts/retag.mjs
         env:
           ADMIN_URL: ${{ secrets.GHOST_ADMIN_API_URL  }}
           ADMIN_API_KEY: ${{ secrets.GHOST_ADMIN_API_KEY }}
