@@ -17,7 +17,9 @@ const getRandom = (min, max) => Math.floor(Math.random() * max + min);
   let filter = 'tag:' + (tag || '-hash-newsletter');
   filter = currentPost ? ('id:-' + currentPost + '+' + filter) : '';
   filter = encodeURIComponent(filter)
-  const {posts} = await fetch('/ghost/api/content/posts/?limit=all&fields=url&filter=' + filter + '&key=' + window.contentApiKey)
+  // Ghost 6.x limits 'limit=all' to 100 items, so we explicitly set a reasonable limit
+  // If you have more than 500 posts, consider implementing pagination
+  const {posts} = await fetch('/ghost/api/content/posts/?limit=500&fields=url&filter=' + filter + '&key=' + window.contentApiKey)
   .then(response => response.json());
 
   const post = posts[getRandom(0, posts.length)];
